@@ -1,6 +1,6 @@
 # Servidor Público Rumo à Liberdade Financeira — Landing Page (versão 2)
 
-Versão 2 da LP: mesma página da v1 (guleite/lp-livro-mario-condes), com headline de dor ("Você ganha R$ 20 mil por mês. E só sobram R$ 200. O resto, a dívida levou."), alinhada aos anúncios.
+Versão 2 da LP: mesma página da v1 (guleite/lp-livro-mario-condes), com headline de dor ("Você ganha R$ 20 mil por / mês, e só sobram R$ 200. / O resto, a dívida levou."), alinhada aos anúncios.
 
 Landing page de vendas do e-book do Coronel Mário Lopes Condes (Método CONDES).
 
