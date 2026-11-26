@@ -21,9 +21,9 @@ img{max-width:100%}
   Cole aqui os snippets oficiais antes de publicar no domínio do cliente:
   1) Pixel da Meta  -> fbq('init', 'SEU_PIXEL_ID'); fbq('track', 'PageView');
   2) GA4 (gtag.js)  -> gtag('config', 'G-XXXXXXXXXX');
-  A página já dispara: ViewContent / view_item (carregamento), InitiateCheckout / begin_checkout (cada CTA,
-  com a posição do botão), video_play, faq_open e scroll_depth (50% e 90%).
-  A compra (Purchase) é registrada configurando o mesmo Pixel e o GA4 dentro da Hotmart (Ferramentas > Pixel de rastreamento).
+  A página já dispara: ViewContent / view_item (carregamento), clique_comprar (cada CTA, com a posição
+  do botão; evento personalizado, NÃO é InitiateCheckout), video_play, faq_open e scroll_depth (50% e 90%).
+  O InitiateCheckout e a compra (Purchase) são registrados configurando o mesmo Pixel e o GA4 dentro da Hotmart (Ferramentas > Pixel de rastreamento).
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -838,7 +838,7 @@ footer a:hover{color:var(--gold)}
     try{ window.dataLayer.push(Object.assign({event:name}, params)); }catch(e){}
     try{
       if (typeof window.fbq === 'function'){
-        var meta = {ViewContent:'ViewContent', begin_checkout:'InitiateCheckout'}[name];
+        var meta = {ViewContent:'ViewContent'}[name];
         if (meta) fbq('track', meta, {content_ids:[PRODUCT.item_id], content_name:PRODUCT.item_name, value:PRODUCT.price, currency:'BRL', content_type:'product'});
         else fbq('trackCustom', name, params);
       }
@@ -860,7 +860,8 @@ footer a:hover{color:var(--gold)}
     var pos = a.getAttribute('data-cta');
     a.href = checkoutUrl(pos);
     a.addEventListener('click', function(){
-      track('begin_checkout', {cta_position:pos, value:PRODUCT.price, currency:'BRL', items:[PRODUCT]});
+      /* Só registra o clique. O InitiateCheckout é disparado pela própria Hotmart quando o checkout carrega. */
+      track('clique_comprar', {cta_position:pos});
     });
   });
   track('ViewContent', {value:PRODUCT.price, currency:'BRL', items:[PRODUCT]});
