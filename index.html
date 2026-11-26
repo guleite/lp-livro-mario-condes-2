@@ -18,13 +18,20 @@ img{max-width:100%}
 <meta name="description" content="Servidor Público Rumo à Liberdade Financeira — o livro do Coronel Mário Condes para sair das dívidas, organizar o contracheque e começar a construir patrimônio.">
 <!--
   RASTREAMENTO (produção)
-  Cole aqui os snippets oficiais antes de publicar no domínio do cliente:
-  1) Pixel da Meta  -> fbq('init', 'SEU_PIXEL_ID'); fbq('track', 'PageView');
-  2) GA4 (gtag.js)  -> gtag('config', 'G-XXXXXXXXXX');
-  A página já dispara: ViewContent / view_item (carregamento), clique_comprar (cada CTA, com a posição
+  Google Tag Manager GTM-TNRQ2PSQ, o mesmo contêiner do site coronelmariocondes.com.br.
+  Pixel da Meta e GA4 são configurados dentro do GTM, não aqui.
+  A página envia para o dataLayer (e para fbq/gtag, se o GTM os carregar): ViewContent / view_item (carregamento), clique_comprar (cada CTA, com a posição
   do botão; evento personalizado, NÃO é InitiateCheckout), video_play, faq_open e scroll_depth (50% e 90%).
+  No GTM, não crie gatilho de clique nos botões de compra para o InitiateCheckout.
   O InitiateCheckout e a compra (Purchase) são registrados configurando o mesmo Pixel e o GA4 dentro da Hotmart (Ferramentas > Pixel de rastreamento).
 -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TNRQ2PSQ');</script>
+<!-- End Google Tag Manager -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Marcellus&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,500&display=swap">
@@ -419,6 +426,10 @@ footer a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNRQ2PSQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Ícones -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
